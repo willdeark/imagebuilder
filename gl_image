@@ -365,6 +365,15 @@ def main(argv):
 
         # clean binary file
         check_call("rm -rf bin/*", shell=True, cwd=im_path)
+
+        filepath=im_path + "/repositories.conf"
+        content=""
+        with open(filepath, 'r') as f:
+            content = f.read()
+        if content:
+            content = content.replace('https://fw.', 'http://fw.')
+            with open(filepath, 'w') as f:
+                f.write(content)
         
         # Make index for glinet
         os.environ["TOPDIR"] = im_path
