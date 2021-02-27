@@ -437,7 +437,7 @@ def main(argv):
                     return_code, output = commands.getstatusoutput("find bin/b1300/ -name b1300-nor-apps.img")
                     if output != "":
                         fw_name = bin_dir + "/" + "qsdk-" + image + "-" + c.getVersion(image) + "-" + time.strftime("%m%d", time.localtime()) + os.path.splitext(output)[-1]
-                        fw_name=bin_dir + "/firmware" + os.path.splitext(output)[-1]
+                        fw_name=bin_dir + "/" + image + os.path.splitext(output)[-1]
                         os.system('mv ' + output + ' ' + fw_name)
                     # return_code, output = commands.getstatusoutput("basename %s" % output)
                 elif image == "s1300":
@@ -447,7 +447,7 @@ def main(argv):
                     return_code, output = commands.getstatusoutput("find bin/s1300/ -name s1300-noremmc-apps.img")
                     if output != "":
                         fw_name = bin_dir + "/" + "qsdk-" + image + "-" + c.getVersion(image) + "-" + time.strftime("%m%d", time.localtime()) + os.path.splitext(output)[-1]
-                        fw_name=bin_dir + "/firmware" + os.path.splitext(output)[-1]
+                        fw_name=bin_dir + "/" + image + os.path.splitext(output)[-1]
                         os.system('mv ' + output + ' ' + fw_name)
                     # return_code, output = commands.getstatusoutput("basename %s" % output)
                 elif image == "ap1300":
@@ -457,7 +457,7 @@ def main(argv):
                     return_code, output = commands.getstatusoutput("find bin/ap1300/ -name ap1300-nornand-apps.img")
                     if output != "":
                         fw_name = bin_dir + "/" + "qsdk-" + image + "-" + c.getVersion(image) + "-" + time.strftime("%m%d", time.localtime()) + os.path.splitext(output)[-1]
-                        fw_name=bin_dir + "/firmware" + os.path.splitext(output)[-1]
+                        fw_name=bin_dir + "/" + image + os.path.splitext(output)[-1]
                         os.system('mv ' + output + ' ' + fw_name)
                     # return_code, output = commands.getstatusoutput("basename %s" % output)
                 else:
@@ -476,7 +476,7 @@ def main(argv):
                     fw_name = bin_dir + "/" + "openwrt-" + image + "-" + c.getVersion(image) + "-" + time.strftime("%m%d", time.localtime()) + "_" + os.path.splitext(filename)[0] + os.path.splitext(output)[-1]
                 else:
                     fw_name = bin_dir + "/" + "openwrt-" + image + "-" + c.getVersion(image) + "-" + time.strftime("%m%d", time.localtime()) + os.path.splitext(output)[-1]
-                fw_name=bin_dir + "/firmware" + os.path.splitext(output)[-1]
+                fw_name=bin_dir + "/" + image + os.path.splitext(output)[-1]
                 if output != "":
                     os.system('mv ' + output + ' ' + fw_name)
 
@@ -493,7 +493,7 @@ def main(argv):
                     fw_name = bin_dir + "/" + "openwrt-" + image + "-" + c.getVersion(image) + "-" + time.strftime("%m%d", time.localtime()) + "_" + os.path.splitext(filename)[0] + os.path.splitext(output)[-1]
                 else:
                     fw_name = bin_dir + "/" + "openwrt-" + image + "-" + c.getVersion(image) + "-" + time.strftime("%m%d", time.localtime()) + os.path.splitext(output)[-1]
-                fw_name=bin_dir + "/firmware" + os.path.splitext(output)[-1]
+                fw_name=bin_dir + "/" + image + os.path.splitext(output)[-1]
                 if output != "":
                     os.system('mv ' + output + ' ' + fw_name)
 
@@ -512,7 +512,7 @@ def main(argv):
                         fw_name = bin_dir + "/" + "openwrt-" + image + "-" + c.getVersion(image) + "-" + time.strftime("%m%d", time.localtime()) + "_" + os.path.splitext(filename)[0] + os.path.splitext(output)[-1]
                     else:
                         fw_name = bin_dir + "/" + "openwrt-" + image + "-" + c.getVersion(image) + "-" + time.strftime("%m%d", time.localtime()) + os.path.splitext(output)[-1]
-                    fw_name=bin_dir + "/firmware" + os.path.splitext(output)[-1]
+                    fw_name=bin_dir + "/" + image + os.path.splitext(output)[-1]
                     if output != "":
                         os.system('mv ' + output + ' ' + fw_name)
                         print("Copy " + output + " to " + fw_name)
