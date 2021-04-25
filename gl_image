@@ -415,7 +415,8 @@ def main(argv):
             merge_files(files, tmpfiles)
 
         # Output directory
-        bin_dir = os.getcwd() + "/bin/" + image
+        compile_time = time.strftime('%Y%m%d',time.localtime(time.time()))
+        bin_dir = os.getcwd() + "/bin/"+ compile_time + "/" + image
         if not os.path.isdir(bin_dir):
             check_output("mkdir -p %s" % bin_dir, shell=True)
 
